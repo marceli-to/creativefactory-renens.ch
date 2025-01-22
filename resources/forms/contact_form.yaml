@@ -1,0 +1,21 @@
+title: 'Contact form'
+honeypot: webs1te
+email:
+  -
+    id: lv2hk7hm
+    to: mieten@apleona.com
+    from: no-reply@creativefactory-renens.ch
+    reply_to: no-reply@creativefactory-renens.ch
+    subject: 'Kontaktformular creativefactory-renens.ch'
+    mailer: smtp
+    html: email/html/contact-owner
+    text: email/text/contact-owner
+  -
+    id: lwq9kyrs
+    to: '{{ email }}'
+    from: no-reply@creativefactory-renens.ch
+    reply_to: no-reply@creativefactory-renens.ch
+    subject: 'Kontaktformular creativefactory-renens.ch'
+    html: email/html/contact-user
+    text: email/text/contact-user
+    mailer: smtp

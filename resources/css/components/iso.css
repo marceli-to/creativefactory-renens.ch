@@ -1,0 +1,55 @@
+.iso-cls-1 {
+  fill: #ae9888;
+}
+
+.iso-cls-1, 
+.iso-cls-2, 
+.iso-cls-3 {
+  stroke: #000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: .2px;
+}
+
+.iso-cls-2 {
+  fill: #b3b3b3;
+}
+
+.iso-cls-3 {
+  fill: #d5c8bd;
+}
+
+/* State classes */
+.is-active.is-available [class^="iso-cls-"],
+.is-active.is-available[class^="iso-cls-"] {
+  @apply fill-mocha
+}
+
+.is-active.is-taken [class^="iso-cls-"],
+.is-active.is-taken[class^="iso-cls-"] {
+  fill: #C04145;
+}
+
+[data-iso]:hover {
+  @apply cursor-pointer;
+}
+
+[data-object].is-active {
+  @apply !bg-mocha !bg-opacity-20;
+}
+
+/* Floor classes */
+[data-iso-floor] {
+  @apply transition-transform duration-300;
+}
+.is-up {
+  @apply transform -translate-y-[16%] transition-transform duration-300;
+}
+
+.is-down {
+  @apply transform translate-y-[16%] transition-transform duration-300;
+}
+
+.no-transform {
+  @apply !transform-none;
+}

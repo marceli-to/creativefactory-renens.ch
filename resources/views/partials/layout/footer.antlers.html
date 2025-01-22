@@ -1,0 +1,39 @@
+<footer class="">
+  {{ partial:layout/inner class="" }}
+
+      <div class="col-span-6 flex justify-end items-end text-right">
+        <ul>
+          <li>
+            <a 
+              href="/impressum" 
+              title="Impressum"
+              class="transition-all">
+              Impressum
+            </a>
+          </li>
+          <li>
+            <a 
+              href="/datenschutz" 
+              title="Datenschutz"
+              class="transition-all">
+              Datenschutz
+            </a>
+          </li>
+          <li>
+            <a 
+              href="https://stoz.ch" 
+              title="design by stoz" 
+              target="_blank"
+              class="transition-all">
+              design by stoz
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  {{ /partial:layout/inner }}
+</footer>
+{{ vite src="resources/js/app.js" }}
+{{ livewire:scripts }}
+</body>
+</html>

@@ -1,0 +1,16 @@
+{{ partial:email/styles }}
+<div style="padding: 10px 5px">
+  <p>Vielen Dank für Ihre Anfrage. Wir werden diese bearbeiten und melden uns baldmöglichst bei Ihnen.</p>
+  <p>Sie haben folgende Daten an uns übermittelt:</p>
+  <table cellpadding="0" cellspacing="0">
+    {{ fields }}
+      {{ if display != 'Privacy' }}
+        <tr>
+          <td>{{ display }}</td>
+          <td>{{ value && value != 'NULL' ? value : '–' }}</td>
+        </tr>
+      {{ /if }}
+    {{ /fields }}
+  </table>
+  <p>Freundliche Grüsse<br>APLEONA SCHWEIZ AG, Basel</p>
+</div>

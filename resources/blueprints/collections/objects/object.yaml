@@ -1,0 +1,168 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: number
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Nummer
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: building
+            field:
+              options:
+                h1: 'Haus 1'
+                h2: 'Haus 2'
+                h3: 'Haus 3'
+                h4: 'Haus 4'
+              taggable: false
+              push_tags: false
+              multiple: false
+              clearable: false
+              searchable: true
+              cast_booleans: false
+              default: h1
+              type: select
+              display: Haus
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: floor
+            field:
+              options:
+                hg: HG
+                eg: EG
+                1.og: '1. OG'
+                2.og: '2. OG'
+                dg: DG
+              taggable: false
+              push_tags: false
+              multiple: false
+              clearable: false
+              searchable: true
+              cast_booleans: false
+              default: eg
+              type: select
+              display: Etage
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: rooms
+            field:
+              options:
+                '2.5': '2.5'
+                '3.5': '3.5'
+                '4.5': '4.5'
+              taggable: false
+              push_tags: false
+              multiple: false
+              clearable: false
+              searchable: true
+              cast_booleans: false
+              type: select
+              display: Zimmer
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: space_gross
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: HNF
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: space_outer
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Aussenfläche
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: rent_gross
+            field:
+              input_type: number
+              antlers: false
+              type: text
+              display: Mietzins
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: state
+            field:
+              options:
+                available: verfügbar
+                reserved: reserviert
+                rented: vermietet
+              taggable: false
+              push_tags: false
+              multiple: false
+              clearable: false
+              searchable: true
+              cast_booleans: false
+              type: select
+              display: Status
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              default: available
+          -
+            handle: title
+            field:
+              type: text
+              required: false
+              validate:
+                - required
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - objects
+              max_items: 1
+              listable: false
+              localizable: true
+title: Object

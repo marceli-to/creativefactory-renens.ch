@@ -1,0 +1,9 @@
+<li>
+  <a 
+    href="{{ url }}" 
+    class="block w-full font-lato-black font-black text-lg md:text-base lg:text-lg tracking-wider text-white hover:text-almond md:text-mocha md:hover:text-white transition-color {{ is_current || is_parent ? '!text-almond md:!text-white' : '' }}"
+    target="{{ is_external ? '_blank' : '_self' }}"
+    title="{{ title }}">
+    {{ title }}
+  </a>
+</li>
