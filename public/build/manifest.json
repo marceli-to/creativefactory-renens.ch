@@ -1,8 +1,12 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-d45b1b38.css",
+    "file": "assets/app-557a7e51.css",
     "isEntry": true,
     "src": "resources/css/app.css"
+  },
+  "resources/icons/chevron-down.svg": {
+    "file": "assets/chevron-down-3b95e92a.svg",
+    "src": "resources/icons/chevron-down.svg"
   },
   "resources/icons/marker.svg": {
     "file": "assets/marker-4b2c6581.svg",
