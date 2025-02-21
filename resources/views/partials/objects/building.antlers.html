@@ -17,7 +17,7 @@
           {{ floor }}
         {{ /partial:components/table/tcell }}
         {{ partial:components/table/tcell }}
-          {{ number_of_rooms }}
+          {{ number_of_rooms }}{{ if {description_title | contains('avec pièce atelier')} }}+1{{ /if }} {{ description_title }}
         {{ /partial:components/table/tcell }}
         {{ partial:components/table/tcell }}
           {{ surface_living }}
