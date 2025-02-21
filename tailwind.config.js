@@ -28,6 +28,7 @@ export default {
         'crimson': '#C2403B',
         'beige': '#eae7de',
         'olive': '#8A995C',
+        'iron': '#3B3B3D',
       },
 
       fontFamily: {

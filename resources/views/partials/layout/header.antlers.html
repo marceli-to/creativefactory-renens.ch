@@ -1,5 +1,5 @@
 <header class="bg-beige w-full min-h-115">
-  {{ partial:layout/inner class="flex justify-between items-center lg:items-end pt-35 pb-15 lg:pt-60 lg:pb-20 relative" }}
+  {{ partial:layout/inner class="flex justify-between items-center lg:items-end pt-35 pb-15 lg:pt-60 lg:pb-20 {{ slug == 'offre' ? 'pb-25 lg:pb-45' : '' }} relative" }}
     <a href="/">
       {{ partial:partials/icons/logo-project class="lg:w-195 lg:h-auto" }}
     </a>
