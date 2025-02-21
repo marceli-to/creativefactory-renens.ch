@@ -16,7 +16,7 @@ h1 {
 }
 
 h2 {
-  @apply font-bold mb-0 text-crimson
+  @apply text-base lg:text-lg font-bold mb-0 text-crimson
 }
 
 h3 {

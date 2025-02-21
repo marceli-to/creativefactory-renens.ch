@@ -1,5 +1,86 @@
 {{ partial:layout/section }}
-{{ partial:layout/inner }}
-  {{ partial:components/headings/h1 title="Creative Factory" }}
-{{ /partial:layout/inner }}
+
+  {{ partial:components/media/visual image="creative-factory-rue-de-chene-contact" alt="" }}
+
+  <section class="bg-white">
+
+    {{ partial:layout/inner class="py-20 md:py-40 xl:py-60" }}
+
+      <div class="max-w-3xl">
+        <h1 class="max-w-2xl">Contact</h1>
+        <p><strong>Si vous avez des questions, n'hésitez pas à remplir le formulaire de contact.</strong></p>
+        <p>Pour postuler, veuillez sélectionner l'appartement ou le local de votre choix dans la rubrique «Offre» et nous envoyer votre candidature.</p>
+      </div>
+
+      {{ nocache }}
+
+        {{ form:contact_form class="mt-20 md:mt-40 max-w-4xl" }}
+
+          {{ if errors }}
+            {{ partial:components/forms/elements/errors }}
+          {{ /if }}
+        
+          {{ if success }}
+            {{ partial:components/forms/elements/success }}
+              Vielen Dank für Ihre Anfrage.
+            {{ /partial:components/forms/elements/success }}
+          {{ /if }}
+
+          <input type="text" name="webs1te" class="hidden" />
+          {{ partial:layout/grid class="md:!gap-y-15 xl:!gap-y-25 md:!gap-x-20 xl:!gap-x-25" }}
+
+            {{# {{ partial:layout/span class="!col-span-full sm:grid sm:grid-cols-12 md:!gap-y-15 lg:!gap-y-20 md:!gap-x-20 lg:!gap-x-25" }}
+              <div class="col-span-full md:col-span-6">
+                {{ partial:components/forms/elements/select field="interest" placeholder="Interesse an" value="{{ old:interest }}" error="{{ error:interest ? true : false }}" }}
+                <input type="hidden" name="interest" value="{{ old:interest }}"/>
+              </div>
+              <div class="col-span-full flex-wrap gap-10 md:gap-15 js-apartment-selection hidden"></div>
+            {{ /partial:layout/span }} #}}
+
+            {{ partial:layout/span }}
+              {{ partial:components/forms/elements/field field="firstname" placeholder="Prénom*" required="true" value="{{ old:firstname }}" error="{{ error:firstname ? true : false }}" }}
+            {{ /partial:layout/span }}
+
+            {{ partial:layout/span }}
+              {{ partial:components/forms/elements/field field="name" placeholder="Nom de Famille*" required="true" value="{{ old:name }}" error="{{ error:name ? true : false }}" }}
+            {{ /partial:layout/span }}
+
+            {{ partial:layout/span }}
+              {{ partial:components/forms/elements/field field="street_number" required="true" placeholder="Rue/Nr.*" value="{{ old:street_number }}" error="{{ error:street_number ? true : false }}"}}
+            {{ /partial:layout/span }}
+
+            {{ partial:layout/span }}
+              {{ partial:components/forms/elements/field field="location" required="true" placeholder="NPA/Localité*" value="{{ old:location }}" error="{{ error:location ? true : false }}" }}
+            {{ /partial:layout/span }}
+
+            {{ partial:layout/span }}
+              {{ partial:components/forms/elements/field type="email" required="true" field="email" placeholder="EMail*" value="{{ old:email }}" error="{{ error:email ? true : false }}" }}
+            {{ /partial:layout/span }}
+
+            {{ partial:layout/span }}
+              {{ partial:components/forms/elements/field field="phone" required="true" placeholder="Téléphone*" value="{{ old:phone }}" error="{{ error:phone ? true : false }}" }}
+            {{ /partial:layout/span }}
+
+            {{ partial:layout/span class="!col-span-full" }}
+              {{ partial:components/forms/elements/textarea field="message" placeholder="Message" }}
+            {{ /partial:layout/span }}
+
+            {{ partial:layout/span class="!col-span-full mb-25 md:mb-10" }}
+              {{ partial:components/forms/elements/checkbox field="privacy" id="privacy" value="{{ old:privacy }}" error="{{ error:privacy ? true : false }}" }}
+            {{ /partial:layout/span }}
+
+            {{ partial:layout/span class="!col-span-full" }}
+              {{ partial:components/forms/elements/button label="Envoyer" }}
+            {{ /partial:layout/span }}
+
+          {{ /partial:layout/grid }}
+                
+        {{ /form:contact_form }}
+
+      {{ /nocache }}
+
+    {{ /partial:layout/inner }}
+
+  </section>
+
 {{ /partial:layout/section }}
