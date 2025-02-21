@@ -1,7 +1,7 @@
 <li>
   <a 
     href="{{ url }}" 
-    class="block w-full font-lato-black font-black text-lg md:text-base lg:text-lg tracking-wider text-white hover:text-almond md:text-mocha md:hover:text-white transition-color {{ is_current || is_parent ? '!text-almond md:!text-white' : '' }}"
+    class="block w-full text-md uppercase lg:leading-none hover:text-crimson transition-all {{ is_current || is_parent ? 'text-crimson font-bold' : '' }}"
     target="{{ is_external ? '_blank' : '_self' }}"
     title="{{ title }}">
     {{ title }}

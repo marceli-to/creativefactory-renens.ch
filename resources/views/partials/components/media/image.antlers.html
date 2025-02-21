@@ -1,13 +1,17 @@
-<figure class="{{ wrapperClass }}">
+<figure class="w-full">
   <picture>
-    <source media="(min-width: 768px)" srcset="/assets/{{ image }}-md.jpg">
-    <source srcset="/assets/{{ image }}-sm.jpg">
+    <source media="(min-width: 1200px)" srcset="/assets/{{ image }}.avif" type="image/avif">
+    <source media="(min-width: 1200px)" srcset="/assets/{{ image }}.jpg" type="image/jpeg">
+    <source media="(min-width: 768px)" srcset="/assets/{{ image }}-md.avif" type="image/avif">
+    <source media="(min-width: 768px)" srcset="/assets/{{ image }}-md.jpg" type="image/jpeg">
+    <source srcset="/assets/{{ image }}-sm.avif" type="image/avif">
+    <source srcset="/assets/{{ image }}-sm.jpg" type="image/jpeg">
     <img 
       src="/assets/{{ image }}-sm.jpg" 
       alt="{{ alt }}" 
       title="{{ alt }}" 
-      height="1600" 
+      height="1200" 
       width="900"
-      class="w-full h-auto block {{ class }}">
+      class="aspect-[4/3] object-cover h-full w-full {{ class }}">
   </picture>
 </figure>

@@ -1,14 +1,19 @@
-<figure>
-  <picture>
-    <source media="(min-width: 1200px)" srcset="/assets/{{ image }}.jpg">        
-    <source media="(min-width: 768px)" srcset="/assets/{{ image }}-md.jpg">
-    <source srcset="/assets/{{ image }}-sm.jpg">
+<figure class="relative">
+  <div class="absolute bg-beige h-1/2 w-full left-0 top-0"></div>
+  <div class="absolute bg-white h-1/2 w-full left-0 bottom-0"></div>
+  <picture class="max-w-7xl mx-auto block px-15 md:px-30 relative">
+    <source media="(min-width: 1200px)" srcset="/assets/{{ image }}.avif" type="image/avif">
+    <source media="(min-width: 1200px)" srcset="/assets/{{ image }}.jpg" type="image/jpeg">
+    <source media="(min-width: 768px)" srcset="/assets/{{ image }}-md.avif" type="image/avif">
+    <source media="(min-width: 768px)" srcset="/assets/{{ image }}-md.jpg" type="image/jpeg">
+    <source srcset="/assets/{{ image }}-sm.avif" type="image/avif">
+    <source srcset="/assets/{{ image }}-sm.jpg" type="image/jpeg">
     <img 
       src="/assets/{{ image }}-sm.jpg" 
       alt="{{ alt }}" 
       title="{{ alt }}" 
-      height="1600" 
-      width="900"
+      height="1920" 
+      width="1080"
       class="aspect-[21/9] object-cover h-full w-full">
   </picture>
 </figure>

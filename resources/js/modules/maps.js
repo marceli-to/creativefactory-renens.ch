@@ -4,7 +4,7 @@ const initMap = () => {
       container: 'map',
       style: 'mapbox://styles/marcelitoooo/ck16ms7m51nlo1cmwnqrbjuyq?optimize=true',
       center: [6.590025369034536,46.53118161042164], 
-      zoom: 13
+      zoom: 15
   });
   map.addControl(new mapboxgl.NavigationControl());
   map.scrollZoom.disable();

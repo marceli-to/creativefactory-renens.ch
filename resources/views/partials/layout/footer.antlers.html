@@ -1,35 +1,44 @@
-<footer class="!hidden">
-  {{ partial:layout/inner class="" }}
+<footer class="bg-beige text-sm border-b-crimson border-b-5 md:border-b-10 xl:border-b-15">
+  {{ partial:layout/inner class="py-20 md:py-25 xl:py-30 flex flex-col gap-y-15 sm:gap-y-0 sm:flex-row sm:gap-x-40 xl:gap-x-80" }}
 
-      <div class="col-span-6 flex justify-end items-end text-right">
-        <ul>
-          <li>
-            <a 
-              href="/impressum" 
-              title="Impressum"
-              class="transition-all">
-              Impressum
-            </a>
-          </li>
-          <li>
-            <a 
-              href="/datenschutz" 
-              title="Datenschutz"
-              class="transition-all">
-              Datenschutz
-            </a>
-          </li>
-          <li>
-            <a 
-              href="https://stoz.ch" 
-              title="design by stoz" 
-              target="_blank"
-              class="transition-all">
-              design by stoz
-            </a>
-          </li>
-        </ul>
-      </div>
+    <div>
+      {{ partial:partials/icons/logo-marketer class="w-125 md:w-150 xl:w-175 h-auto" }}
+    </div>
+
+    <div>
+      <strong>Apleona Suisse SA</strong><br>
+      Rue du Caudray 4<br>
+      1020 Renens
+    </div>
+
+    <div class="grow-0">
+      <ul>
+        <li>
+          <a 
+            href="/mentions-legales" 
+            title="mentions légales"
+            class="hover:text-crimson transition-all">
+            mentions légales
+          </a>
+        </li>
+        <li>
+          <a 
+            href="/protection-des-donnees" 
+            title="Protection des données"
+            class="hover:text-crimson transition-all">
+            Protection des données
+          </a>
+        </li>
+        <li>
+          <a 
+            href="https://stoz.ch" 
+            title="design by stoz" 
+            target="_blank"
+            class="hover:text-crimson transition-all">
+            design by stoz
+          </a>
+        </li>
+      </ul>
     </div>
   {{ /partial:layout/inner }}
 </footer>

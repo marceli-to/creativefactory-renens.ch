@@ -1,0 +1,36 @@
+<figure class="relative">
+  <div class="absolute bg-white h-1/2 w-full left-0 top-0 z-10"></div>
+  <div class="absolute bg-beige h-1/2 w-full left-0 bottom-0 z-10"></div>
+  <div class="w-full grid grid-cols-2 gap-15 md:gap-30 max-w-7xl mx-auto px-15 md:px-30 relative z-20">
+    <picture class="block col-span-1">
+      <source media="(min-width: 1200px)" srcset="/assets/{{ image_left }}.avif" type="image/avif">
+      <source media="(min-width: 1200px)" srcset="/assets/{{ image_left }}.jpg" type="image/jpeg">
+      <source media="(min-width: 768px)" srcset="/assets/{{ image_left }}-md.avif" type="image/avif">
+      <source media="(min-width: 768px)" srcset="/assets/{{ image_left }}-md.jpg" type="image/jpeg">
+      <source srcset="/assets/{{ image_left }}-sm.avif" type="image/avif">
+      <source srcset="/assets/{{ image_left }}-sm.jpg" type="image/jpeg">
+      <img 
+        src="/assets/{{ image_left }}-sm.jpg" 
+        alt="{{ alt }}" 
+        title="{{ alt }}" 
+        height="1920" 
+        width="1080"
+        class="aspect-[16/8] object-cover h-full w-full">
+    </picture>
+    <picture class="block col-span-1">
+      <source media="(min-width: 1200px)" srcset="/assets/{{ image_right }}.avif" type="image/avif">
+      <source media="(min-width: 1200px)" srcset="/assets/{{ image_right }}.jpg" type="image/jpeg">
+      <source media="(min-width: 768px)" srcset="/assets/{{ image_right }}-md.avif" type="image/avif">
+      <source media="(min-width: 768px)" srcset="/assets/{{ image_right }}-md.jpg" type="image/jpeg">
+      <source srcset="/assets/{{ image_right }}-sm.avif" type="image/avif">
+      <source srcset="/assets/{{ image_right }}-sm.jpg" type="image/jpeg">
+      <img 
+        src="/assets/{{ image_right }}-sm.jpg" 
+        alt="{{ alt }}" 
+        title="{{ alt }}" 
+        height="1920" 
+        width="1080"
+        class="aspect-[16/8] object-cover h-full w-full">
+    </picture>
+  </div>
+</figure>

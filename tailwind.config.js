@@ -18,11 +18,16 @@ export default {
       screens: {
         'xs': '500px',
       },
+      borderWidth: {
+        5: '5px',
+        10: '10px',
+        15: '15px',
+      },
 
       colors: {
-        'fern': '#326338',
-        'beige': '#C3AE99',
-        'linen': '#E7DDD3',
+        'crimson': '#C2403B',
+        'beige': '#eae7de',
+        'olive': '#8A995C',
       },
 
       fontFamily: {

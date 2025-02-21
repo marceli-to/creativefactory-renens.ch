@@ -11,16 +11,12 @@ main {
   @apply flex-1;
 }
 
-h1, h2 {
-  @apply uppercase text-fern text-xl lg:text-2xl font-bold
-}
-
-h1, h2 {
-  @apply mb-15 lg:mb-25 leading-[1.15]
+h1 {
+  @apply uppercase text-olive text-xl lg:text-2xl mb-15 lg:mb-30 leading-[1.15] font-bold
 }
 
 h2 {
-  @apply mb-10 text-beige
+  @apply font-bold mb-0 text-crimson
 }
 
 h3 {
@@ -29,7 +25,7 @@ h3 {
 
 .imprint h2,
 .privacy h2 {
-  @apply text-fern text-base lg:text-xl
+  @apply text-olive text-base lg:text-xl
 }
 
 .privacy p {
@@ -37,7 +33,7 @@ h3 {
 }
 
 p {
-  @apply mb-16 lg:mb-20;
+  @apply mb-15 md:mb-20 xl:mb-25;
 }
 
 p:last-of-type {
@@ -45,11 +41,11 @@ p:last-of-type {
 }
 
 strong {
-  @apply font-bold;
+  @apply font-medium;
 }
 
 main ul {
-  @apply m-0 p-0 mb-16 lg:mb-20;
+  @apply m-0 p-0 mb-15 md:mb-20 xl:mb-25;
 }
 
 main ul:last-child {

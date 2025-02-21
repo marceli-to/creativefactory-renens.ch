@@ -1,1 +1,25 @@
-<header></header>
+<header class="bg-beige w-full min-h-115">
+  {{ partial:layout/inner class="flex justify-between items-center lg:items-end pt-35 pb-15 lg:pt-60 lg:pb-20 relative" }}
+    <a href="/">
+      {{ partial:partials/icons/logo-project class="lg:w-195 lg:h-auto" }}
+    </a>
+    <div class="absolute right-15 md:right-30 top-1/2 -translate-y-1/2 lg:hidden">
+      <a 
+        href="javascript:;" 
+        x-on:click="menu = ! menu" 
+        title="{{ "Menü anzeigen" | trans }}"
+        :class="{ 'is-active': menu === true }"
+        class="group flex justify-center items-center w-24 h-20">
+        <span x-show="menu === false">
+          {{ partial:icons/burger class="w-24 h-auto" }}
+        </span>
+        <span x-cloak x-show="menu === true">
+        {{ partial:icons/cross class="w-18 h-auto" }}
+        </span>
+      </a>
+    </div>
+    <div class="">
+      {{ partial:menu/wrapper }}
+    </div>
+  {{ /partial:layout/inner }}
+</header>
