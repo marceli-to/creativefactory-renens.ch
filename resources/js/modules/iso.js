@@ -32,7 +32,7 @@
         iso.classList.remove('hidden');
         
         // Add appropriate active class based on state
-        if (state === 'taken') {
+        if (state === 'taken' || state === 'reserved') {
           iso.classList.add('is-active-taken');
         } else if (state === 'free') {
           iso.classList.add('is-active-free');

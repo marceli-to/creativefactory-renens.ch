@@ -30,6 +30,7 @@ class GetData
 
     // Removed for fix (09.11.2023)
     $states = $this->getState($data);
+
     $data = $data->map(function ($apartment) use ($states) {
       $apartment['state'] = $states[$apartment['reference']] ?? $this->status_free;
       return $apartment;
