@@ -14,34 +14,64 @@ class Apartments extends Tags
     // get data from api or storage
     $data = (new GetData)->execute();
 
-    // filter out items with "object_category":"APARTMENT"
-    $data = collect($data)->filter(function ($item, $key) {
-      return $item['object_category'] == 'APARTMENT';
+    // we need to manually set "floor": to -1 for apartments with:
+    // "ref_object":"-1B02"
+    // "ref_object":"-1B04" 
+    // "ref_object":"-1B06"
+
+    $data = $data->map(function ($item, $key) {
+      if ($item['ref_object'] == '-1B02' || $item['ref_object'] == '-1B04' || $item['ref_object'] == '-1B06') {
+        $item['floor'] = -1;
+      }
+      return $item;
     });
 
-    // init array of apartments with buildings
-    $apartments = ['building_1', 'building_2', 'building_3', 'building_4'];
+    // search for "number_of_rooms" => null
+    //  => collect them and extract the ref_object
+    // $no_rooms = $data->where('number_of_rooms', null);
+    // $no_rooms = $no_rooms->pluck('ref_object');
 
-    // group apartments by building
+    // search for "surface_living" => null
+    //  => collect them and extract the ref_object and object_type
+    // $no_surface_living = $data->whereNull('surface_living')
+    //     ->map(function ($item) {
+    //         return [
+    //             'ref_object' => $item["ref_object"],
+    //             'object_type' => $item["object_type"]
+    //         ];
+    //     });
+
+    // dd($no_surface_living);
+
+    // Debug:
+    // get the entry for "ref_object":"03A01"
+    // $apartment = $data->firstWhere('ref_object', '03A01');
+    // dd($apartment);
+
+    // search for "number_of_rooms" => null
+    // and set to 1
+    $data = $data->map(function ($item, $key) {
+      if ($item['number_of_rooms'] === null) {
+        $item['number_of_rooms'] = "1.0";
+      }
+      return $item;
+    });
+
+    // search for description_title that contain 'pièces avec pièce atelier'
+    // and set number_of_rooms to number_of_rooms - 1
+
+    $data = $data->map(function ($item, $key) {
+      if (\Str::contains($item['description_title'], 'pièces avec pièce atelier')) {
+        $item['number_of_rooms_fixed'] = ($item['number_of_rooms'] - 1) . "+1";
+      }
+      return $item;
+    });
+
+
     $apartments = collect($data)->sortBy('floor');
-
-    // // addresses
-    // $addresses = [
-    //   'building_1' => 'Haus 1 – Sennheimerstrasse 50',
-    //   'building_2' => 'Haus 2 – Sennheimerstrasse 52',
-    //   'building_3' => 'Haus 3 – Sennheimerstrasse 54',
-    // ];
-
-    // $reference_date = [
-    //   'building_1' => '1. Dezember 2024',
-    //   'building_2' => '1. Dezember 2024',
-    //   'building_3' => '1. Dezember 2024',
-    // ];
 
     return [
       'apartments' => $apartments,
-      // 'addresses' => $addresses,
-      // 'reference_date' => $reference_date,
     ];
   }
 }

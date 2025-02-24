@@ -70,3 +70,11 @@ sup {
   height: 50px;
   width: 40px;
 }
+
+.badge {
+  @apply cursor-pointer flex items-center gap-x-10 bg-olive font-bold text-md md:text-lg text-white tracking-wide uppercase leading-none px-8 pt-8 pb-6;
+}
+
+.badge svg {
+  @apply size-15
+}

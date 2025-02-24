@@ -5,6 +5,17 @@ tabs:
       -
         fields:
           -
+            handle: interest
+            field:
+              antlers: false
+              type: textarea
+              display: 'Interesse an'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
             handle: firstname
             field:
               input_type: text

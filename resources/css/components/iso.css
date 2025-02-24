@@ -1,3 +1,11 @@
+
+/*
+ available: #cdcdd9
+ taken: #©9796af
+*/
+
+
+
 .iso-cls-1 {
   fill: #ae9888;
 }
@@ -39,7 +47,7 @@
 }
 
 /* Floor classes */
-[data-iso-floor] {
+/* [data-iso-floor] {
   @apply transition-transform duration-300;
 }
 .is-up {
@@ -52,4 +60,4 @@
 
 .no-transform {
   @apply !transform-none;
-}
+} */

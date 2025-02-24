@@ -29,13 +29,13 @@
           <input type="text" name="webs1te" class="hidden" />
           {{ partial:layout/grid class="md:!gap-y-15 xl:!gap-y-25 md:!gap-x-20 xl:!gap-x-25" }}
 
-            {{# {{ partial:layout/span class="!col-span-full sm:grid sm:grid-cols-12 md:!gap-y-15 lg:!gap-y-20 md:!gap-x-20 lg:!gap-x-25" }}
+            {{ partial:layout/span class="!col-span-full sm:grid sm:grid-cols-12 md:!gap-y-15 lg:!gap-y-20 md:!gap-x-20 lg:!gap-x-25" }}
               <div class="col-span-full md:col-span-6">
-                {{ partial:components/forms/elements/select field="interest" placeholder="Interesse an" value="{{ old:interest }}" error="{{ error:interest ? true : false }}" }}
+                {{ partial:components/forms/elements/select field="interest" placeholder="Intérêt pour" value="{{ old:interest }}" error="{{ error:interest ? true : false }}" }}
                 <input type="hidden" name="interest" value="{{ old:interest }}"/>
               </div>
               <div class="col-span-full flex-wrap gap-10 md:gap-15 js-apartment-selection hidden"></div>
-            {{ /partial:layout/span }} #}}
+            {{ /partial:layout/span }}
 
             {{ partial:layout/span }}
               {{ partial:components/forms/elements/field field="firstname" placeholder="Prénom*" required="true" value="{{ old:firstname }}" error="{{ error:firstname ? true : false }}" }}

@@ -1,13 +1,20 @@
+
 <select 
   name="interest-selector"  
-  class="!outline-none bg-mocha rounded-sm text-white px-8 py-10 pr-20 w-full appearance-none bg-[url(../icons/chevron-down.svg)] bg-[length:15px_auto] bg-[right_.5rem_center] bg-no-repeat js-apartments">
+  class="appearance-none bg-[url(../icons/chevron-down.svg)] bg-[length:15px_auto] bg-[right_1rem_top_0.9rem] bg-no-repeat !border-olive focus:border-olive !outline-none !ring-0 text-olive font-bold uppercase w-full px-8 pt-8 pb-4 js-apartments">
   <option value="">{{ placeholder }}</option>
-  {{# {{ if field == 'interest' }}
-    <option value="Alle 2.5-Zimmerwohnungen">Alle 2.5-Zimmerwohnungen</option>
-    <option value="Alle 3.5-Zimmerwohnungen">Alle 3.5-Zimmerwohnungen</option>
-    <option value="Alle 4.5-Zimmerwohnungen">Alle 4.5-Zimmerwohnungen</option>
-    {{ collection:objects }}
-      <option value="Wohnung {{ number }}" {{ value == number ? 'selected' : ''}}>Wohnung {{ number }}</option>
-    {{ /collection:objects }}
-  {{ /if }} #}}
+  {{ if field == 'interest' }}
+    <option value="Appartements 1 pièce">Appartements de 1 pièce</option>
+    <option value="Appartements de 1.5 pièces">Appartements de 1.5 pièces</option>
+    <option value="Appartements de 1.5+1 pièces">Appartements de 1.5+1 pièces</option>
+    <option value="Appartements de 2.5 pièces">Appartements de 2.5 pièces</option>
+    <option value="Appartements de 2.5+1 pièces">Appartements de 2.5+1 pièces</option>
+    <option value="Appartements de 5 pièces">Appartements de 5 pièces</option>
+    <option value="Appartements de 7.5 pièces">Appartements de 7.5 pièces</option>
+    {{ apartments:get }}
+      {{ apartments }}
+        <option value="Appartement N° {{ ref_object }}" {{ value == ref_object ? 'selected' : ''}}>Appartement N° {{ ref_object }}</option>
+      {{ /apartments}}
+    {{ /apartments:get }}
+  {{ /if }}
 </select>

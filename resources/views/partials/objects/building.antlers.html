@@ -17,11 +17,13 @@
           {{ floor }}
         {{ /partial:components/table/tcell }}
         {{ partial:components/table/tcell }}
-          {{ if {description_title | contains('pièces avec pièce atelier')} }}
+          {{ number_of_rooms }}
+          {{# {{ if {description_title | contains('pièces avec pièce atelier')} }}
             {{ number_of_rooms - 1 }}+1
           {{ else }}
             {{ number_of_rooms }}
-          {{ /if }}
+          {{ /if }} #}}
+          {{ number_of_rooms_fixed }}
         {{ /partial:components/table/tcell }}
         {{ partial:components/table/tcell }}
           {{ surface_living }}
