@@ -5,7 +5,7 @@
     {{ apartments }}
       {{ partial:components/table/trow 
           filterable="true" 
-          number="{{ ref_house }}-{{ ref_object }}" 
+          number="{{ ref_object }}" 
           state="{{ state:get :state="status" :reserved="reserved" key="true" }}" 
           rooms="{{ number_of_rooms }}" 
           floor="{{ floor }}" 
@@ -17,13 +17,11 @@
           {{ floor }}
         {{ /partial:components/table/tcell }}
         {{ partial:components/table/tcell }}
-          {{ number_of_rooms }}
-          {{# {{ if {description_title | contains('pièces avec pièce atelier')} }}
-            {{ number_of_rooms - 1 }}+1
-          {{ else }}
-            {{ number_of_rooms }}
-          {{ /if }} #}}
+        {{ if number_of_rooms_fixed }}
           {{ number_of_rooms_fixed }}
+        {{ else }}
+          {{ number_of_rooms }}
+        {{ /if }}
         {{ /partial:components/table/tcell }}
         {{ partial:components/table/tcell }}
           {{ surface_living }}

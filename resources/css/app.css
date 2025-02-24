@@ -2,6 +2,7 @@
 @import "vendor/mapbox.css";
 @import "vendor/swiper.css";
 @import "vendor/swiper-custom.css";
+@import "components/iso.css";
 
 @tailwind base;
 @tailwind components;
@@ -72,7 +73,7 @@ sup {
 }
 
 .badge {
-  @apply cursor-pointer flex items-center gap-x-10 bg-olive font-bold text-md md:text-lg text-white tracking-wide uppercase leading-none px-8 pt-8 pb-6;
+  @apply cursor-pointer flex items-center gap-x-10 bg-olive font-bold text-white tracking-wide uppercase leading-none px-8 pt-8 pb-6;
 }
 
 .badge svg {
