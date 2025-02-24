@@ -1,6 +1,6 @@
 <div>
   <h2 class="uppercase text-iron">Appartements</h2>
-  {{ partial:components/table/table class="mb-20 lg:mb-40" }}
+  {{ partial:components/table/table class="mb-20 lg:mb-40 !text-xxs" }}
     {{ partial:components/table/thead }}
     {{ apartments }}
       {{ partial:components/table/trow 
@@ -10,23 +10,23 @@
           rooms="{{ number_of_rooms }}" 
           floor="{{ floor }}" 
           building="{{ ref_house }}" }}
-        {{ partial:components/table/tcell class="!pr-10" }}
+        {{ partial:components/table/tcell class="pr-5 sm:!pr-10" }}
           {{ ref_object }}
         {{ /partial:components/table/tcell }}
-        {{ partial:components/table/tcell }}
+        {{ partial:components/table/tcell class="text-center" }}
           {{ floor }}
         {{ /partial:components/table/tcell }}
-        {{ partial:components/table/tcell }}
+        {{ partial:components/table/tcell class="text-center" }}
         {{ if number_of_rooms_fixed }}
           {{ number_of_rooms_fixed }}
         {{ else }}
           {{ number_of_rooms }}
         {{ /if }}
         {{ /partial:components/table/tcell }}
-        {{ partial:components/table/tcell }}
+        {{ partial:components/table/tcell class="text-center" }}
           {{ space_display }}
         {{ /partial:components/table/tcell }}
-        {{ partial:components/table/tcell }}
+        {{ partial:components/table/tcell class="text-center" }}
           {{ if {state:available :state="status" :reserved="reserved"} }}
             {{ rent_net | format_number(0, '.', '\'') }}
           {{ /if }}

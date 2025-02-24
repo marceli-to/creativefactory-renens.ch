@@ -59,15 +59,18 @@ class Apartments extends Tags
 
     // search for description_title that contain 'pièces avec pièce atelier'
     // and set number_of_rooms to number_of_rooms - 1
-
+    // for ref_object "02A02" or "03A02" set number_of_rooms to number_of_rooms - 1
     $data = $data->map(function ($item, $key) {
       if (\Str::contains($item['description_title'], 'pièces avec pièce atelier')) {
+        $item['number_of_rooms_fixed'] = ($item['number_of_rooms'] - 1) . "+1";
+      }
+      else if ($item['ref_object'] == '02A02' || $item['ref_object'] == '03A02') {
         $item['number_of_rooms_fixed'] = ($item['number_of_rooms'] - 1) . "+1";
       }
       return $item;
     });
 
-    $apartments = collect($data)->sortBy('floor');
+    $apartments = collect($data)->sortBy('floor')->sortBy('ref_object');
 
     return [
       'apartments' => $apartments,
