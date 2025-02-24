@@ -67,7 +67,6 @@ class Apartments extends Tags
       return $item;
     });
 
-
     $apartments = collect($data)->sortBy('floor');
 
     return [
