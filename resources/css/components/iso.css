@@ -2,6 +2,10 @@
   isolation: isolate;
   fill: #fff;
   mix-blend-mode: multiply;
+}
+
+.iso-cls.is-active-free,
+.iso-cls.is-active-taken {
   stroke: #000;
   stroke-miterlimit: 10;
   stroke-width: .15px;
