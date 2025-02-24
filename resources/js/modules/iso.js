@@ -2,6 +2,11 @@
   document.addEventListener('DOMContentLoaded', function() {
     const listTable = document.querySelector('[data-objects]');
     const listObjects = document.querySelectorAll('[data-object]');
+
+    // Abort if either list table or list objects is not found
+    if (!listTable || !listObjects) {
+      return;
+    }
     
     // Utility functions
     const hideAllFloorImages = () => {
