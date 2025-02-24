@@ -23,13 +23,14 @@ h3 {
   @apply font-bold text-beige uppercase text-base md:text-md mb-5
 }
 
-.imprint h2,
+/* .imprint h2,
 .privacy h2 {
   @apply text-olive text-base lg:text-xl
-}
+} */
 
-.privacy p {
-  @apply max-w-3xl;
+
+.privacy a {
+  @apply underline underline-offset-2 decoration-1 hover:no-underline;
 }
 
 p {
