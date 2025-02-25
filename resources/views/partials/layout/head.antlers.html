@@ -2,7 +2,11 @@
 <html lang="fr" class="scroll-smooth overflow-y-scroll">
 <head>
 <meta charset="utf-8">
-{{ if is_homepage }}<title>«Creative Factory» – Rue du Chêne</title>{{ else }}<title>{{ open_graph_title ?? title ?? site:name }} | «Creative Factory» – Rue du Chêne</title>{{ endif }}
+{{ if is_homepage }}
+<title>«Creative Factory» – Rue du Chêne</title>
+{{ else }}
+<title>{{ open_graph_title ?? title ?? site:name }} – «Creative Factory» – Rue du Chêne</title>
+{{ endif }}
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {{ if  open_graph_description }}<meta name="description" content="{{ open_graph_description }}">{{ else }}<meta name="description" content="{{ config.client.meta_description }}">{{ /if}}

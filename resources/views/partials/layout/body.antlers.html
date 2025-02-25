@@ -1,6 +1,7 @@
 <body 
   class="antialiased font-lexend font-light text-iron text-sm md:text-base leading-[1.3] flex min-h-screen flex-col" 
   x-data="{ menu: false }">
+  {{# {{ partial:layout/debug }} #}}
   {{ slot:header }}
   {{ slot }}
   {{ slot:footer }}

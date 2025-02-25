@@ -7,7 +7,7 @@
           filterable="true" 
           number="{{ ref_object }}" 
           state="{{ state:get :state="status" :reserved="reserved" key="true" }}" 
-          rooms="{{ number_of_rooms }}" 
+          rooms="{{ number_of_rooms_fixed ?? number_of_rooms }}" 
           floor="{{ floor }}" 
           building="{{ ref_house }}" }}
         {{ partial:components/table/tcell class="pr-5 sm:!pr-10" }}
@@ -31,7 +31,7 @@
             {{ rent_net | format_number(0, '.', '\'') }}
           {{ /if }}
         {{ /partial:components/table/tcell }}
-        {{ partial:components/table/tcell }}
+        {{ partial:components/table/tcell class="text-center" }}
           {{ if {state:available :state="status" :reserved="reserved"} }}
             {{ rent_charges | format_number(0, '.', '\'') }}
           {{ /if }}
