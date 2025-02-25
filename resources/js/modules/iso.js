@@ -1,6 +1,7 @@
 (() => {
   document.addEventListener('DOMContentLoaded', function() {
     const listTable = document.querySelector('[data-objects]');
+    const listTableHeader = document.querySelector('[data-objects] thead');
     const listObjects = document.querySelectorAll('[data-object]');
 
     // Abort if either list table or list objects is not found
@@ -65,6 +66,8 @@
     
     // Mouseleave event on the list table
     listTable.addEventListener('mouseleave', resetToDefaultState);
+    listTableHeader.addEventListener('mouseover', resetToDefaultState);
+    listTableHeader.addEventListener('mouseleave', resetToDefaultState);
     
     // Mouse events for each object
     listObjects.forEach(object => {
