@@ -14,7 +14,9 @@
     <option value="Commerces">Commerces</option>
     {{ apartments:get }}
       {{ apartments }}
-        <option value="{{ object_type }} N° {{ ref_object }}" {{ value == ref_object ? 'selected' : ''}}>{{ object_type }} N° {{ ref_object }}</option>
+        <option value="{{ object_type == "SHOP" ? "Commerce" : (object_type == "APARTMENT" ? "APPARTEMENT" : object_type) }} N° {{ ref_object }}" {{ value == ref_object ? 'selected' : ''}}>
+          {{ object_type == "SHOP" ? "Commerce" : (object_type == "APARTMENT" ? "APPARTEMENT" : object_type) }} N° {{ ref_object }}
+        </option>
       {{ /apartments}}
     {{ /apartments:get }}
   {{ /if }}

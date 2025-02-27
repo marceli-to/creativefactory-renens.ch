@@ -49,12 +49,12 @@ class Apartments extends Tags
 
     // search for "number_of_rooms" => null
     // and set to 1
-    // $data = $data->map(function ($item, $key) {
-    //   if ($item['number_of_rooms'] === null) {
-    //     $item['number_of_rooms'] = "1.0";
-    //   }
-    //   return $item;
-    // });
+    $data = $data->map(function ($item, $key) {
+      if ($item['number_of_rooms'] === null) {
+        $item['number_of_rooms'] = "1.0";
+      }
+      return $item;
+    });
 
     // search for description_title that contain 'pièces avec pièce atelier'
     // and set number_of_rooms to number_of_rooms + 1 and ref_object "02A02" or "03A02" set number_of_rooms to number_of_rooms + 1
