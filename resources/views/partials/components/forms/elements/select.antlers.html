@@ -11,9 +11,10 @@
     <option value="Appartements de 2.5+1 pièces">Appartements de 2.5+1 pièces</option>
     <option value="Appartements de 5 pièces">Appartements de 5 pièces</option>
     <option value="Appartements de 6.5+1 pièces">Appartements de 6.5+1 pièces</option>
+    <option value="Commerces">Commerces</option>
     {{ apartments:get }}
       {{ apartments }}
-        <option value="Appartement N° {{ ref_object }}" {{ value == ref_object ? 'selected' : ''}}>Appartement N° {{ ref_object }}</option>
+        <option value="{{ object_type }} N° {{ ref_object }}" {{ value == ref_object ? 'selected' : ''}}>{{ object_type }} N° {{ ref_object }}</option>
       {{ /apartments}}
     {{ /apartments:get }}
   {{ /if }}
