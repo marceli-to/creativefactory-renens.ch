@@ -7,7 +7,8 @@
   {{ partial:layout/span class="!col-span-full md:!col-span-6 relative z-20" }}
     {{ nocache }}
       {{ apartments:get }}
-        {{ partial:objects/building :apartments="apartments" }}
+        {{ partial:objects/building :apartments="apartments" title="Appartements" }}
+        {{ partial:objects/building :apartments="shops" title="Commerce" }}
       {{ /apartments:get }}
     {{ /nocache }}
   {{ /partial:layout/span }}

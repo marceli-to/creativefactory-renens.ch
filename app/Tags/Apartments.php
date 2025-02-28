@@ -68,10 +68,16 @@ class Apartments extends Tags
       }
       return $item;
     });
-    $apartments = collect($data)->sortBy('floor')->sortBy('ref_object');
 
+    // filter data by:
+    // object_type = 'SHOP'
+    // object_type = 'NOT SHOP'
+
+    $shops = $data->where('object_type', 'SHOP');
+    $apartments = $data->where('object_type', '!=', 'SHOP');
     return [
-      'apartments' => $apartments,
+      'apartments' => collect($apartments)->sortBy('floor')->sortBy('ref_object'),
+      'shops' => collect($shops)->sortBy('floor')->sortBy('ref_object'),
     ];
   }
 }

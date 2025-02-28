@@ -1,11 +1,11 @@
 (() => {
   document.addEventListener('DOMContentLoaded', function() {
-    const listTable = document.querySelector('[data-objects]');
-    const listTableHeader = document.querySelector('[data-objects] thead');
+    // Target all tables with data-objects attribute
+    const listTables = document.querySelectorAll('[data-objects]');
     const listObjects = document.querySelectorAll('[data-object]');
 
-    // Abort if either list table or list objects is not found
-    if (!listTable || !listObjects) {
+    // Abort if either list tables or list objects is not found
+    if (!listTables.length || !listObjects.length) {
       return;
     }
     
@@ -64,10 +64,18 @@
       hideAllIso();
     };
     
-    // Mouseleave event on the list table
-    listTable.addEventListener('mouseleave', resetToDefaultState);
-    listTableHeader.addEventListener('mouseover', resetToDefaultState);
-    listTableHeader.addEventListener('mouseleave', resetToDefaultState);
+    // Attach events to each table and its header
+    listTables.forEach(listTable => {
+      const listTableHeader = listTable.querySelector('thead');
+      
+      // Mouseleave event on the list table
+      listTable.addEventListener('mouseleave', resetToDefaultState);
+      
+      if (listTableHeader) {
+        listTableHeader.addEventListener('mouseover', resetToDefaultState);
+        listTableHeader.addEventListener('mouseleave', resetToDefaultState);
+      }
+    });
     
     // Mouse events for each object
     listObjects.forEach(object => {
