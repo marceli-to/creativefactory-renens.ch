@@ -14,6 +14,9 @@ class Apartments extends Tags
     // get data from api or storage
     $data = (new GetData)->execute();
 
+    // remove ref_object = '00D03'
+    $data = $data->where('ref_object', '!=', '00D03');
+
     // we need to manually set "floor": to -1 for apartments with:
     // "ref_object":"-1B02"
     // "ref_object":"-1B04" 
@@ -25,27 +28,6 @@ class Apartments extends Tags
       return $item;
     });
 
-    // search for "number_of_rooms" => null
-    //  => collect them and extract the ref_object
-    // $no_rooms = $data->where('number_of_rooms', null);
-    // $no_rooms = $no_rooms->pluck('ref_object');
-
-    // search for "surface_living" => null
-    //  => collect them and extract the ref_object and object_type
-    // $no_surface_living = $data->whereNull('surface_living')
-    //     ->map(function ($item) {
-    //         return [
-    //             'ref_object' => $item["ref_object"],
-    //             'object_type' => $item["object_type"]
-    //         ];
-    //     });
-
-    // dd($no_surface_living);
-
-    // Debug:
-    // get the entry for "ref_object":"03A01"
-    // $apartment = $data->firstWhere('ref_object', '03A01');
-    // dd($apartment);
 
     // search for "number_of_rooms" => null
     // and set to 1
@@ -68,10 +50,6 @@ class Apartments extends Tags
       }
       return $item;
     });
-
-    // filter data by:
-    // object_type = 'SHOP'
-    // object_type = 'NOT SHOP'
 
     $shops = $data->where('object_type', 'SHOP');
     $apartments = $data->where('object_type', '!=', 'SHOP');
