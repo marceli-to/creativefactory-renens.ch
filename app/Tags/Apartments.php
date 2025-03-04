@@ -50,9 +50,15 @@ class Apartments extends Tags
       }
       return $item;
     });
-
-    $shops = $data->where('object_type', 'SHOP');
-    $apartments = $data->where('object_type', '!=', 'SHOP');
+    
+    $shops = $data->filter(function($item) {
+        return $item['object_type'] === 'SHOP' || $item['object_type'] === 'ATELIER';
+    });
+  
+    $apartments = $data->filter(function($item) {
+        return $item['object_type'] !== 'SHOP' && $item['object_type'] !== 'ATELIER';
+    });
+  
     return [
       'apartments' => collect($apartments)->sortBy('floor')->sortBy('ref_object'),
       'shops' => collect($shops)->sortBy('floor')->sortBy('ref_object'),
