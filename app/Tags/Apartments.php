@@ -50,13 +50,13 @@ class Apartments extends Tags
       }
       return $item;
     });
-    
+
     $shops = $data->filter(function($item) {
-        return $item['object_type'] === 'SHOP' || $item['object_type'] === 'ATELIER';
+      return $item['object_type'] === 'SHOP' || $item['object_type'] === 'ATELIER';
     });
   
     $apartments = $data->filter(function($item) {
-        return $item['object_type'] !== 'SHOP' && $item['object_type'] !== 'ATELIER';
+      return $item['object_type'] !== 'SHOP' && $item['object_type'] !== 'ATELIER';
     });
   
     return [
