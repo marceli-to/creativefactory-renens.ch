@@ -1,0 +1,41 @@
+    
+{{ partial:layout/section }}
+  {{ partial:layout/inner class="pb-20 md:pb-40 xl:pb-60 pt-10 md:pt-20 lg:pt-40" }}
+    <h1>Galerie</h1>
+    <h2 class="mb-5 lg:mb-10">appartement 02B12</h2>
+    {{ partial:layout/grid class="xs:!grid xs:!grid-cols-12 xs:!gap-15 lg:!gap-20" }}
+      {{ loop from="1" to="10" }}
+        <a href="/assets/creative-factory-rue-de-chene-appartement-02b12-{{ value }}.jpg" class="block mb-15 xs:mb-0 xs:col-span-6 sm:col-span-4 lg:col-span-3" data-fancybox>
+          <img src="/assets/creative-factory-rue-de-chene-appartement-02b12-{{ value }}-thumb.jpg" alt="" class="w-full h-auto block">
+        </a>
+      {{ /loop }}
+    {{ /partial:layout/grid }}
+
+    <h2 class="mb-5 lg:mb-10 mt-20 lg:mt-30">appartement 02B14</h2>
+    {{ partial:layout/grid class="xs:!grid xs:!grid-cols-12 xs:!gap-15 lg:!gap-20" }}
+      {{ loop from="1" to="10" }}
+        <a href="/assets/creative-factory-rue-de-chene-appartement-02b14-{{ value }}.jpg" class="block mb-15 xs:mb-0 xs:col-span-6 sm:col-span-4 lg:col-span-3" data-fancybox>
+          <img src="/assets/creative-factory-rue-de-chene-appartement-02b14-{{ value }}-thumb.jpg" alt="" class="w-full h-auto block">
+        </a>
+      {{ /loop }}
+    {{ /partial:layout/grid }}
+
+    <h1 class="mt-30 lg:mt-50">videos</h1>
+    {{ partial:layout/grid class="lg:!gap-20" }}
+      <div class="!mb-15 md:!mb-0 sm:col-span-6 lg:col-span-6">
+        <h2 class="mb-5 lg:mb-10">appartement 02B12</h2>
+        <video controls class="w-full h-auto block aspect-square object-cover" loading="lazy">
+          <source src="/assets/creative-factory-rue-de-chene-appartement-02b12.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="mb-15 sm:mb-0 sm:col-span-6 lg:col-span-6">
+        <h2 class="mb-5 lg:mb-10">appartement 02B14</h2>
+        <video controls class="w-full h-auto block aspect-square object-cover" loading="lazy">
+          <source src="/assets/creative-factory-rue-de-chene-appartement-02b14.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    {{ /partial:layout/grid }}
+  {{ /partial:layout/inner }}
+{{ /partial:layout/section }}

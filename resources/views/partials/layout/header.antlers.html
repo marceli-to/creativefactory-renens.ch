@@ -1,7 +1,7 @@
 <header class="bg-beige w-full min-h-115">
-  {{ partial:layout/inner class="flex justify-between items-center lg:items-end pt-35 pb-15 lg:pt-60 lg:pb-20 {{ slug == 'offre' ? 'pb-25 lg:pb-45' : '' }} relative" }}
+  {{ partial:layout/inner class="flex justify-between items-center lg:items-end pt-35 pb-15 lg:pt-60 lg:pb-20 {{ slug == 'offre' || slug == 'galerie' ? 'pb-25 lg:pb-45' : '' }} relative" }}
     <a href="/">
-      {{ partial:partials/icons/logo-project class="lg:w-195 lg:h-auto" }}
+      {{ partial:partials/icons/logo-project class="lg:w-165 xl:w-195 lg:h-auto" }}
     </a>
     <div class="absolute right-15 md:right-30 top-1/2 -translate-y-1/2 lg:hidden">
       <a 

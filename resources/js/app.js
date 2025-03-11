@@ -11,3 +11,4 @@ import './modules/maps.js';
 import './modules/iso.js';
 import './modules/filter.js';
 import './modules/object_selector.js';
+import './modules/fancybox.js';
