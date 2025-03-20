@@ -29,7 +29,7 @@
         {{ /partial:components/table/tcell }}
         {{ partial:components/table/tcell class="text-center sm:hidden lg:table-cell" }}
         {{ if {state:available :state="status" :reserved="reserved"} }}
-          {{ rent_net | format_number(0, '.', '\'') }}
+          {{ price_display | format_number(0, '.', '\'') }}
         {{ /if }}
       {{ /partial:components/table/tcell }}
         {{ partial:components/table/tcell class="text-center" }}
