@@ -27,11 +27,6 @@
         {{ partial:components/table/tcell class="text-center" }}
           {{ space_display }}
         {{ /partial:components/table/tcell }}
-        {{ partial:components/table/tcell class="text-center sm:hidden lg:table-cell" }}
-        {{ if {state:available :state="status" :reserved="reserved"} }}
-          {{ price_display | format_number(0, '.', '\'') }}
-        {{ /if }}
-      {{ /partial:components/table/tcell }}
         {{ partial:components/table/tcell class="text-center" }}
           {{ if {state:available :state="status" :reserved="reserved"} }}
             {{ rent_net | format_number(0, '.', '\'') }}
@@ -42,6 +37,11 @@
             {{ rent_charges | format_number(0, '.', '\'') }}
           {{ /if }}
         {{ /partial:components/table/tcell }}
+        {{ partial:components/table/tcell class="text-center sm:hidden lg:table-cell" }}
+        {{ if {state:available :state="status" :reserved="reserved"} }}
+          {{ price_display | format_number(0, '.', '\'') }}
+        {{ /if }}
+      {{ /partial:components/table/tcell }}
         {{ partial:components/table/tcell class="text-center" }}
           <a href="/assets/downloads/creative_factory_plan_{{ ref_object }}.pdf" target="_blank" title="Télécharger le plan {{ ref_object }}">
             {{ partial:icons/download }}
