@@ -1,7 +1,7 @@
 <div>
   <a name="{{ title }}" class="scroll-mt-25"></a>
   <h2 class="uppercase text-iron">{{ title }}</h2>
-  {{ partial:components/table/table class="mb-20 lg:mb-40 !text-xxs" }}
+  {{ partial:components/table/table class="mb-20 lg:mb-40 !text-tiny xs:!text-xxs sm:!text-xs" }}
     {{ partial:components/table/thead }}
     {{ apartments }}
       {{ partial:components/table/trow 
@@ -37,7 +37,7 @@
             {{ rent_charges | format_number(0, '.', '\'') }}
           {{ /if }}
         {{ /partial:components/table/tcell }}
-        {{ partial:components/table/tcell class="text-center sm:hidden lg:table-cell" }}
+        {{ partial:components/table/tcell class="text-center hidden lg:table-cell" }}
         {{ if {state:available :state="status" :reserved="reserved"} }}
           {{ price_display | format_number(0, '.', '\'') }}
         {{ /if }}
