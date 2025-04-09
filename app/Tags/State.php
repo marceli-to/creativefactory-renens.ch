@@ -20,7 +20,6 @@ class State extends Tags
 
   public function get()
   {
-
     if ($this->params->get('state') == 'pre' || $this->params->get('state') == 'act' || $this->params->get('state') == 'dis')
     {
       if ($this->params->get('reserved') == false)
@@ -29,13 +28,13 @@ class State extends Tags
       }
       else
       {
-        return $this->params->get('key') ? 'reserved' : 'reserviert';
+        return $this->params->get('key') ? 'reserved' : 'attribué';
       }
     }
 
     if ($this->params->get('state') == 'arc' || $this->params->get('state') == 'rem')
     {
-      return $this->params->get('key') ? 'taken' : 'vermietet';
+      return $this->params->get('key') ? 'taken' : 'loué';
     }
   }
 }
