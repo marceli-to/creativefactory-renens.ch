@@ -5,4 +5,7 @@
   {{ slot:header }}
   {{ slot }}
   {{ slot:footer }}
+  {{ if current_uri == '/contact' }}
+    {{ recaptcha }}
+  {{ /if }}
 </body>
