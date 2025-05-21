@@ -41,11 +41,41 @@ class Apartments extends Tags
     // search for description_title that contain 'pièces avec pièce atelier'
     // and set number_of_rooms to number_of_rooms + 1 and ref_object "02A02" or "03A02" set number_of_rooms to number_of_rooms + 1
     // since in both cases the "default" value is 1 too high, we need to correct for that
-    $data = $data->map(function ($item, $key) {
-      if (\Str::contains($item['description_title'], 'pièces avec pièce atelier')) {
-        $item['number_of_rooms_fixed'] = ($item['number_of_rooms'] - 1) . "+1";
-      }
-      else if ($item['ref_object'] == '02A02' || $item['ref_object'] == '03A02') {
+    $plus_ones = [
+      "01A06",
+      "01A08",
+      "01A10",
+      "01A12",
+      "01A18",
+      "01B02",
+      "01B06",
+      "01B08",
+      "01B10",
+      "01B14",
+      "02A02",
+      "02A08",
+      "02A10",
+      "02A12",
+      "02A18",
+      "02B02",
+      "02B06",
+      "02B08",
+      "02B10",
+      "02B14",
+      "03A02",
+      "03A08",
+      "03A10",
+      "03A12",
+      "03A18",
+      "03B02",
+      "03B06",
+      "03B08",
+      "03B10",
+      "03B14"
+    ];
+    
+    $data = $data->map(function ($item, $key) use ($plus_ones) {
+      if (in_array($item['ref_object'], $plus_ones)) {
         $item['number_of_rooms_fixed'] = ($item['number_of_rooms'] - 1) . "+1";
       }
       return $item;
